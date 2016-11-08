@@ -1,3 +1,6 @@
+% Voces:
+% =====================================================
+
 s_voz_i = {
   \new Staff \with { instrumentName = \voz_i_n } <<
     \new Voice = "voz_i" \voz_i
@@ -52,9 +55,38 @@ s_voz_vi = {
   >>
 }
 
-s_SATB = \new ChoirStaff <<
+
+% Plantillas:
+% =====================================================
+
+SATB = \score {
+  \new ChoirStaff <<
     \s_voz_i
     \s_voz_ii
     \s_voz_iii
     \s_voz_iv
   >>
+}
+
+SSAT = \score {
+  \new ChoirStaff <<
+    \new ChoirStaff \with { systemStartDelimiter = #'SystemStartSquare } <<
+      \s_voz_i
+      \s_voz_ii
+    >>
+    \s_voz_iii
+    \s_voz_iv
+  >>
+}
+
+SATTB = \score {
+  \new ChoirStaff <<
+    \s_voz_i
+    \s_voz_ii
+    \new ChoirStaff \with { systemStartDelimiter = #'SystemStartSquare } <<
+      \s_voz_iii
+      \s_voz_iv
+    >>
+    \s_voz_v
+  >>
+}

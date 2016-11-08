@@ -13,9 +13,7 @@ incipit = #(define-music-function (parser location incipit-musica incipit-texto)
                 \context MensuralStaff  \with {
                   \override InstrumentName.Y-offset = 0.5
                   \override InstrumentName.direction = 1
-                  \hide TupletBracket
-                  \hide TupletNumber
-                  instrumentName = \markup\italic #instrument-name
+                  instrumentName = \markup\italic\teeny #instrument-name
                 } <<
                 \new MensuralVoice {
                   \override Voice.NoteHead.style = #'petrucci
