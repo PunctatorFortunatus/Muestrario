@@ -36,6 +36,7 @@ incipit = #(define-music-function (parser location incipit-musica incipit-texto)
                 ragged-right = ##f
                 ragged-last = ##f
                 system-count = #1 
+                \override Score.SpacingSpanner.shortest-duration-space = #16
               }
             }
 	#})
